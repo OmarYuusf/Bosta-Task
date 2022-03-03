@@ -1,0 +1,292 @@
+@import "../vars/vars.scss";
+
+body {
+  margin: 0;
+  font-family: cairo, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.container-layout {
+  .container-navbar {
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+
+    .container-mobile-list {
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0px;
+
+        li {
+          margin: 6px;
+          list-style-type: none;
+
+          a {
+            text-decoration: none;
+            color: #212121;
+
+            &:hover {
+              color: $prim-color;
+            }
+          }
+        }
+      }
+
+      .mobile-list-container-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 24px;
+
+        .dropdown-tracking-list {
+          position: static;
+          width: 100%;
+          box-shadow: 0px 0px ;
+          .dropdown-tracking-container-form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+
+          }
+        }
+      }
+
+
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .navbar-right {
+        display: flex;
+        justify-content: flex-start;
+
+        .navbar-right-logo {
+          display: flex;
+          align-items: center;
+
+          img {
+            height: 30px;
+          }
+        }
+
+        .navbar-right-list {
+          @media (max-width:991px) {
+            display: none;
+          }
+
+          ul {
+            list-style: none;
+            display: flex;
+            margin: 0px;
+
+            li {
+              display: inline-block;
+              margin: 0px 10px;
+              border-top: 5px solid transparent;
+
+              .active {
+                border-top: 5px solid red;
+              }
+
+              a {
+                padding: 25px 6px;
+                height: 100%;
+                font-size: 17px;
+                font-weight: 500;
+                text-decoration: none;
+                color: #101010;
+
+                &:hover {
+                  border-top: 5px solid red;
+                }
+
+                &:hover {
+                  color: #555;
+                }
+
+
+              }
+            }
+          }
+        }
+      }
+
+      .mobile-menu {
+        @media (min-width:992px) {
+          display: none;
+        }
+
+        >div {
+          padding: 12px 0px;
+        }
+      }
+
+      .navbar-left {
+        @media (max-width:991px) {
+          display: none;
+        }
+
+        ul {
+          list-style: none;
+          display: flex;
+          margin: 0px;
+
+          li:first-of-type {
+            font-weight: 800;
+
+            .dropdown-tracking-list {
+              font-weight: 400;
+            }
+
+            &::after {
+              content: "";
+              border-left: 2px solid rgba(0, 0, 0, 0.15);
+              padding-left: 25px;
+              height: 10px;
+            }
+          }
+
+          li:first-of-type {}
+
+          li:nth-child(2) {
+            a {
+              text-decoration: none;
+              color: #101010;
+
+              &:hover {
+                color: $prim-color;
+              }
+            }
+          }
+
+          li:last-child {
+            color: $prim-color;
+          }
+
+          li {
+            margin: 0px 10px;
+            padding: 25px 6px;
+            border-top: 3px solid transparent;
+            position: relative;
+            font-size: 17px;
+            font-weight: 500;
+            text-decoration: none;
+            color: #101010;
+            cursor: pointer;
+
+            &:hover {
+              border-top: 3px solid red;
+              color: #555;
+            }
+
+            >svg {
+              margin-right: 8px;
+              color: $prim-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.dropdown-tracking-list {
+  z-index: 999;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 25px;
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.09);
+  width: 300px;
+  top: calc(100% + 10px);
+  left: -50%;
+
+  .dropdown-tracking-container-form {
+    * {
+      margin: 0px;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      color: $prim-color;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    div {
+      margin-top: 15px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+
+      input {
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        outline-color: rgb(199, 199, 199);
+        padding-left: 8px;
+        width: 80%;
+      }
+
+      button {
+        height: 28px;
+        width: 28px;
+        margin-right: 10px;
+        background-color: $prim-color;
+        border: 0px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          color: #fff;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

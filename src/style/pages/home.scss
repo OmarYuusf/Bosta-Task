@@ -1,0 +1,55 @@
+@import "../vars/vars.scss";
+
+
+.home-head {
+  >.head-img {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    background-image: url(https://bosta.co/wp-content/uploads/2019/08/Image-42.png);
+    background-position: center;
+    height: 650px;
+    background-color: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    >div {
+      margin-top: -12.5%;
+
+      h1 {
+        font-size: 28px;
+        color: #FFF;
+        line-height: 1.8;
+        margin-bottom: 12px;
+        
+        @media (max-width: 500px) {
+          font-size: 21px;
+        }
+      }
+
+      p {
+        margin-bottom: 20px;
+        color: #cfcfcf;
+        line-height: 1.8;
+        width: 450px;
+
+        @media (max-width: 500px) {
+          width: auto;
+        }
+
+      }
+
+      button {
+        padding: 8px 40px;
+        border: 0px;
+        border-radius: 30px;
+        background-color: $prim-color;
+        color: #FFF;
+        font-weight: 600;
+
+        &:hover {
+          background-color: #d30000
+        }
+      }
+    }
+  }
+}
