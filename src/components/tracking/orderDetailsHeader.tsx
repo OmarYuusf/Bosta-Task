@@ -9,7 +9,7 @@ const OrderDetailsHeader: React.FC<Props> = ({ data }) => {
 	const handleStatueContent = (currentStatue: string): string => {
 		let result = 'تم الطلب';
 		for (let i = 0; i < statusOfOrder.length; i++) {
-			if (statusOfOrder[i].enTitle == currentStatue) {
+			if (statusOfOrder[i].enTitle === currentStatue) {
 				result = statusOfOrder[i].arTitle;
 			}
 		}
@@ -19,7 +19,7 @@ const OrderDetailsHeader: React.FC<Props> = ({ data }) => {
 	const handleStatueColor = (currentStatue: string): string => {
 		let result = '#01002e';
 		for (let i = 0; i < statusOfOrder.length; i++) {
-			if (statusOfOrder[i].enTitle == currentStatue) {
+			if (statusOfOrder[i].enTitle === currentStatue) {
 				result = statusOfOrder[i].color;
 			}
 		}

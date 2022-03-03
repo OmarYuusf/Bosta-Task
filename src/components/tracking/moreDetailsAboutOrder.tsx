@@ -25,7 +25,7 @@ const MoreDetailsAboutOrder: React.FC<Props> = ({ data }) => {
 		let result = [];
 		const getStatueInArabic = (statue: string): string | undefined => {
 			for (let i = 0; i < statusOfOrder.length; i++) {
-				if (statusOfOrder[i].enTitle == statue) {
+				if (statusOfOrder[i].enTitle === statue) {
 					return statusOfOrder[i].arTitle;
 				}
 			}

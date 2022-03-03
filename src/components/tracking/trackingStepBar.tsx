@@ -14,7 +14,6 @@ interface Props {
 const TrackingStepBar: React.FC<Props> = ({ data }) => {
 	const [ step, setStep ] = useState<number>(1);
 	const [ currentStatue, setCurrentStatue ] = useState<string>('تم انشاء الشحنة');
-	const [ currentColor, setCurrentColor ] = useState<string>('green');
 
 	useEffect(
 		() => {
@@ -27,10 +26,9 @@ const TrackingStepBar: React.FC<Props> = ({ data }) => {
 
 	const handleOrderDetails = (currentStatue: string): void => {
 		for (let i = 0; i < statusOfOrder.length; i++) {
-			if (statusOfOrder[i].enTitle == currentStatue) {
+			if (statusOfOrder[i].enTitle === currentStatue) {
 				setStep(statusOfOrder[i].step);
 				setCurrentStatue(statusOfOrder[i].arTitle);
-				setCurrentColor(statusOfOrder[i].color);
 			}
 		}
 	};
@@ -44,9 +42,9 @@ const TrackingStepBar: React.FC<Props> = ({ data }) => {
 				/>
 				<Steps.Item title="تم استلام الشحنه من التاجر" icon={<BsCheckLg style={{ fontSize: 20 }} />} />
 				<Steps.Item
-					title={currentStatue == 'تم الاسترجاع' ? 'تم الاسترجاع' : 'الشحنه خرجت للتسليم'}
+					title={currentStatue === 'تم الاسترجاع' ? 'تم الاسترجاع' : 'الشحنه خرجت للتسليم'}
 					icon={<FaTruck style={{ fontSize: 20 }} />}
-					status={currentStatue == 'تم الاسترجاع' ? 'error' : 'finish'}
+					status={currentStatue === 'تم الاسترجاع' ? 'error' : 'finish'}
 				/>
 				<Steps.Item title="تم التسليم" icon={<IoCloudDone style={{ fontSize: 20 }} />} />
 			</Steps>

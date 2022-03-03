@@ -1,7 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
 import { urlTracking } from './../../config/constants';
-import { ThunkActionDispatch, ThunkDispatch } from 'redux-thunk';
-import { Middleware, Dispatch, Action, AnyAction } from 'redux';
 
 export const getTrackingData = async (code: string): Promise<any> => {
   return async (dispatch: any): Promise<undefined | void> => {
